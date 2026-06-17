@@ -6,7 +6,7 @@
 
   --color-white: #FFFFFF;
   --color-off-white: #EEE9DF;
-  --color-oatmeal: #C9C1B1;
+  --color-beige: #C9C1B1;
   --color-orange: #FFB162;
   --color-dark-orange: #A35139;
   --color-blue: #2C3B4D;
@@ -15,7 +15,9 @@
 }
 
 body {
-  background-color: var(--off-white);
-  color: var(--color-dark-orange);
-  font-family: var(--font-sans);
+  margin: 0;
+  background-image: url('/background_light.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
