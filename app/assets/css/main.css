@@ -4,15 +4,24 @@
 @theme static {
   --font-sans: 'Palatino', 'Palatino Linotype', serif;
 
-  --color-white: #FFFFFF;
-  --color-off-white: #EEE9DF;
-  --color-beige: #C9C1B1;
   --color-orange: #FFB162;
+  /*oklch(0.8199_0.1318_64.46)*/
+
   --color-dark-orange: #A35139;
+  /*oklch(0.5309_0.1148_37.14)*/
+
   --color-blue: #2C3B4D;
+  /*oklch(0.3471_0.0373_253.36)*/
+
   --color-dark-blue: #1B2632;
-  --color-black: #000000;
+  /*oklch(0.264_0.0274_251.05)*/
+
+  /*FOR FUTURE LIGHT THEME*/
+  --color-off-white: #EEE9DF;
+  /*oklch(0.9352_0.0144_84.58)*/
   
+  --color-beige: #C9C1B1;
+  /*oklch(0.813_0.0237_84.59)*/
 }
 
 html, body {
