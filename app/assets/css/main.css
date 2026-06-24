@@ -35,3 +35,24 @@ html, body {
 section {
   scroll-margin-top: 65px;
 }
+
+.align-left {
+    text-align: left;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.title {
+    padding: 1rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--color-orange);
+}
+
+.page-section {
+    padding: 1rem;
+    padding-bottom: 3rem;
+    background-color: var(--color-blue);
+}
