@@ -46,6 +46,22 @@ const scrollTo = (id: string) => {
     gap: 0.5rem;
 }
 
+@media (max-width: 768px) {
+    .nav-inner {
+        gap: 0;
+    }
+
+    .nav-link {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .nav-link :deep([class*="px"]) {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
 .nav-link {
     color: var(--color-orange) !important;
     font-weight: bold;

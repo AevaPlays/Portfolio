@@ -11,7 +11,7 @@
                 Outside of coding, I enjoy crocheting, playing video games including The Elder Scrolls and
                 The Legend of Zelda series, and spending time with my cat.
             </p>
-            <img class="about-image md:w-[25rem] md:h-[25rem] xl:w-[30rem] xl:h-[30rem] w-64 h-64 self-center mx-auto" src="/Marcel.png" alt="Marcel" />
+            <img class="about-image md:w-[25rem] md:h-[25rem] xl:w-[30rem] xl:h-[30rem] w-64 h-64 self-center mx-auto md:mx-0 md:mr-8" src="/Marcel.png" alt="Marcel" />
         </div>
     </section>
 </template>
