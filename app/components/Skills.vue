@@ -25,7 +25,7 @@ const items = [
     <section id="skills" class="page-section">
         <h1 class="title align-left">SKILLS</h1>
 
-        <div class="skills-grid">
+        <div class="skills-grid lg:flex-row flex-col">
             <div class="skills-column">
                 <h2 class="skills-subtitle">Technical Skills</h2>
                 <div class="skills-list">
@@ -59,15 +59,15 @@ const items = [
             </div>
 
             <div class="skills-column align-left">
-                <h1 class="skills-subtitle" style="text-align: left; margin-left: 22rem;">Other skills</h1>
+                <h1 class="skills-subtitle lg:ml-[22rem]" style="text-align: left;">Other skills</h1>
                 <UTimeline
                     size="3xl"
                     :items="items"
                     :default-value="2"
                     :ui="{
-                        item: 'even:flex-row-reverse even:-translate-x-[calc(100%-2.25rem)] even:text-right'
+                        item: 'xl:even:flex-row-reverse xl:even:-translate-x-[calc(100%-2.25rem)] xl:even:text-right'
                     }"
-                    class="custom-timeline translate-x-[calc(6rem)]"
+                    class="custom-timeline xl:translate-x-[6rem]"
                 >
                     <template #date="{ item }">
                         <span class="timeline-date-text">{{ item.date }}</span>

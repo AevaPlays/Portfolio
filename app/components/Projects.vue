@@ -53,7 +53,7 @@ const projects = [
             arrows
             dots
             :items="projects"
-            :ui="{ item: 'basis-1/3' }"
+            :ui="{ item: 'basis-full md:basis-1/3 xl:basis-1/4' }"
             class="custom-carousel"
         >
             <div class="carousel-card align-right">
@@ -61,7 +61,7 @@ const projects = [
                     variant="ghost"
                     :to="item.link"
                     target="_blank"
-                    class="project-title-btn"
+                    class="project-title-btn text-4xl md:text-4xl xl:text-4xl"
                     trailing-icon="i-lucide-external-link"
                 >
                     {{ item.title }}
@@ -79,7 +79,7 @@ const projects = [
                         {{ tool }}
                     </UBadge>
                 </div>
-                <p class="card-text">{{ item.text }}</p>
+                <p class="card-text text-2xl sm:text-xl md:text-xl lg:text-xl xl:text-2xl">{{ item.text }}</p>
             </div>
         </UCarousel>
     </section>
@@ -93,11 +93,11 @@ const projects = [
     display: flex;
     padding: 1rem;
     flex-direction: column;
+    
 }
 
 .project-title-btn {
     color: var(--color-orange) !important;
-    font-size: 3rem !important;
     font-weight: bold;
     display: inline-flex;
     align-self: flex-end;
@@ -116,7 +116,6 @@ const projects = [
 }
 
 .card-text {
-    font-size: 1.5rem;
     color: var(--color-orange);
     text-align: left;
 }

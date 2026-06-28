@@ -13,16 +13,16 @@ const scrollTo = (id: string) => {
 <template>
     <UCard class="navbar">
         <nav class="nav-inner">
-            <UButton variant="ghost" color="neutral" class="nav-link" @click="scrollTo('about')">
+            <UButton variant="ghost" color="neutral" class="nav-link text-lg md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tight md:tracking-normal xl:tracking-wide" @click="scrollTo('about')">
                 | About Me |
             </UButton>
-            <UButton variant="ghost" color="neutral" class="nav-link" @click="scrollTo('projects')">
+            <UButton variant="ghost" color="neutral" class="nav-link text-lg md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tight md:tracking-normal xl:tracking-wide" @click="scrollTo('projects')">
                 | Projects |
             </UButton>
-            <UButton variant="ghost" color="neutral" class="nav-link" @click="scrollTo('skills')">
+            <UButton variant="ghost" color="neutral" class="nav-link text-lg md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tight md:tracking-normal xl:tracking-wide" @click="scrollTo('skills')">
                 | Skills |
             </UButton>
-            <UButton variant="ghost" color="neutral" class="nav-link" @click="scrollTo('contact')">
+            <UButton variant="ghost" color="neutral" class="nav-link text-lg md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tight md:tracking-normal xl:tracking-wide" @click="scrollTo('contact')">
                 | Contact Me |
             </UButton>
         </nav>
@@ -40,17 +40,15 @@ const scrollTo = (id: string) => {
 }
 
 .nav-inner {
-    height: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 0.5rem;
 }
 
 .nav-link {
     color: var(--color-orange) !important;
     font-weight: bold;
-    font-size: 2rem;
     background: transparent !important;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }

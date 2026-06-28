@@ -4,7 +4,7 @@
 
         <div class="contact-links-container">
             <UButton
-                class="contact-link-btn"
+                class="contact-link-btn sm:w-auto w-full"
                 to="https://www.linkedin.com/in/amiraerte/"
                 target="_blank"
                 icon="i-lucide-linkedin"
@@ -13,7 +13,7 @@
             </UButton>
 
             <UButton
-                class="contact-link-btn"
+                class="contact-link-btn sm:w-auto w-full"
                 to="https://github.com/AevaPlays"
                 target="_blank"
                 icon="i-lucide-github"
@@ -22,19 +22,11 @@
             </UButton>
 
             <UButton
-                class="contact-link-btn"
+                class="contact-link-btn sm:w-auto w-full"
                 to="mailto:amiraerte.w@gmail.com"
                 icon="i-lucide-mail"
             >
                 Email: amiraerte.w@gmail.com
-            </UButton>
-
-            <UButton
-                class="contact-link-btn"
-                to="tel:+37256868200"
-                icon="i-lucide-phone"
-            >
-                Phone: +372 5686 8200
             </UButton>
         </div>
     </section>
