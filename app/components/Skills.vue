@@ -1,4 +1,12 @@
 <script setup lang="ts">
+const technicalSkills = ['C++', 'Go', 'Java', 'JavaScript', 'Python', 'TypeScript']
+
+const frameworkSkills = [
+    'CLI Systems', 'Docker', 'DOM Rendering', 'Fabric', 'File I/O & CSV',
+    'GitHub Actions', 'Gradle', 'JPA', 'Node.js', 'PostgreSQL',
+    'React', 'REST APIs', 'Socket.IO', 'SQLite', 'Spring Boot', 'WebSockets'
+]
+
 const items = [
     {
         date: 'Sept , 2024 - April, 2026',
@@ -25,58 +33,52 @@ const items = [
     <section id="skills" class="page-section">
         <h1 class="title align-left">SKILLS</h1>
 
-        <div class="skills-grid lg:flex-row flex-col">
-            <div class="skills-column">
-                <h2 class="skills-subtitle">Technical Skills</h2>
-                <div class="skills-list">
-                    <UBadge variant="solid" class="skill-item">C++</UBadge>
-                    <UBadge variant="solid" class="skill-item">Go</UBadge>
-                    <UBadge variant="solid" class="skill-item">Java</UBadge>
-                    <UBadge variant="solid" class="skill-item">JavaScript</UBadge>
-                    <UBadge variant="solid" class="skill-item">Python</UBadge>
-                    <UBadge variant="solid" class="skill-item">TypeScript</UBadge>
+        <div class="flex xl:flex-row flex-col gap-8 p-4">
+            <div class="flex flex-col gap-2">
+                <h2 class="text-[#FFB162] text-3xl font-bold">Technical Skills</h2>
+                <div class="flex flex-col flex-wrap gap-2 w-60">
+                    <UBadge
+                        v-for="skill in technicalSkills"
+                        :key="skill"
+                        variant="solid"
+                        class="text-[#FFB162] bg-[#A35139] text-lg font-semibold px-3 py-1"
+                    >
+                        {{ skill }}
+                    </UBadge>
                 </div>
 
-                <h2 class="skills-subtitle tools-subtitle">Frameworks & Tools</h2>
-                <div class="skills-list">
-                    <UBadge variant="solid" class="skill-item">CLI Systems</UBadge>
-                    <UBadge variant="solid" class="skill-item">Docker</UBadge>
-                    <UBadge variant="solid" class="skill-item">DOM Rendering</UBadge>
-                    <UBadge variant="solid" class="skill-item">Fabric</UBadge>
-                    <UBadge variant="solid" class="skill-item">File I/O & CSV</UBadge>
-                    <UBadge variant="solid" class="skill-item">GitHub Actions</UBadge>
-                    <UBadge variant="solid" class="skill-item">Gradle</UBadge>
-                    <UBadge variant="solid" class="skill-item">JPA</UBadge>
-                    <UBadge variant="solid" class="skill-item">Node.js</UBadge>
-                    <UBadge variant="solid" class="skill-item">PostgreSQL</UBadge>
-                    <UBadge variant="solid" class="skill-item">React</UBadge>
-                    <UBadge variant="solid" class="skill-item">REST APIs</UBadge>
-                    <UBadge variant="solid" class="skill-item">Socket.IO</UBadge>
-                    <UBadge variant="solid" class="skill-item">SQLite</UBadge>
-                    <UBadge variant="solid" class="skill-item">Spring Boot</UBadge>
-                    <UBadge variant="solid" class="skill-item">WebSockets</UBadge>
+                <h2 class="text-[#FFB162] text-3xl font-bold mt-12">Frameworks & Tools</h2>
+                <div class="flex flex-col flex-wrap gap-2 w-60">
+                    <UBadge
+                        v-for="skill in frameworkSkills"
+                        :key="skill"
+                        variant="solid"
+                        class="text-[#FFB162] bg-[#A35139] text-lg font-semibold px-3 py-1"
+                    >
+                        {{ skill }}
+                    </UBadge>
                 </div>
             </div>
 
-            <div class="skills-column align-left">
-                <h1 class="skills-subtitle lg:ml-[22rem]" style="text-align: left;">Other skills</h1>
+            <div class="flex flex-col flex-1">
+                <h1 class="text-[#FFB162] text-3xl font-bold xl:ml-[22rem]">Other Skills</h1>
                 <UTimeline
                     size="3xl"
                     :items="items"
                     :default-value="2"
                     :ui="{
-                        item: 'xl:even:flex-row-reverse xl:even:-translate-x-[calc(100%-2.25rem)] xl:even:text-right'
+                        item: 'xl:even:flex-row-reverse xl:even:-translate-x-[calc(100%-3rem)] xl:even:text-right'
                     }"
-                    class="custom-timeline xl:translate-x-[6rem]"
+                    class="custom-timeline xl:translate-x-[45rem]"
                 >
                     <template #date="{ item }">
                         <span class="timeline-date-text">{{ item.date }}</span>
                     </template>
 
                     <template #description="{ item }">
-                        <div class="timeline-card">
-                            <h4 class="card-box-title">{{ item.displayTitle }}</h4>
-                            <p v-if="item.description" class="card-box-text">
+                        <div class="inline-block text-left max-w-[400px] bg-[#A35139] text-[#FFB162] p-3 rounded-lg shadow-sm font-medium mt-1">
+                            <h4 class="text-[#FFB162] text-xl font-bold mb-1">{{ item.displayTitle }}</h4>
+                            <p v-if="item.description" class="text-[#FFB162] text-base font-medium leading-relaxed">
                                 {{ item.description }}
                             </p>
                         </div>
@@ -88,49 +90,10 @@ const items = [
 </template>
 
 <style scoped>
-.skills-grid {
-    display: flex;
-    gap: 2rem;
-    padding: 1rem;
-}
-
-.skills-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.skills-subtitle {
-    color: var(--color-orange);
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.tools-subtitle {
-    margin-top: 3rem;
-}
-
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    flex-direction: column;
-    width: 15rem;
-}
-
-.skill-item {
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 0.4rem 0.8rem;
-    color: #FFB162;
-    background-color: #A35139;
-}
-
 .timeline-date-text {
     font-size: 1.5rem !important;
     font-weight: bold !important;
-    color: var(--color-orange) !important;
+    color: #FFB162 !important;
 }
 
 .custom-timeline :deep(.u-timeline-item-date),
@@ -138,33 +101,6 @@ const items = [
 .custom-timeline :deep([class*="-label"]) {
     font-size: 1rem !important;
     font-weight: bold !important;
-    color: var(--color-orange) !important;
-}
-
-.timeline-card {
-    display: inline-block;
-    text-align: left;
-    max-width: 400px;
-    background-color: var(--color-dark-orange);
-    color: var(--color-orange);
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-    font-weight: 500;
-    margin-top: 0.25rem;
-}
-
-.card-box-title {
-    color: var(--color-orange);
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 0.25rem;
-}
-
-.card-box-text {
-    color: var(--color-orange);
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.625;
+    color: #FFB162 !important;
 }
 </style>

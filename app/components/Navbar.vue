@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
+
 const scrollTo = (id: string) => {
     const el = document.getElementById(id)
     if (el) {
@@ -8,49 +10,50 @@ const scrollTo = (id: string) => {
         })
     }
 }
+
+onMounted(() => {
+    const navLinks = document.querySelectorAll('.nav-link')
+    navLinks.forEach(link => {
+        link.addEventListener('touchend', () => {
+            (link as HTMLElement).blur()
+        })
+    })
+})
 </script>
 
 <template>
-    <UCard class="navbar">
-        <nav class="nav-inner">
-            <UButton variant="ghost" color="neutral" class="nav-link text-lg md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tight md:tracking-normal xl:tracking-wide" @click="scrollTo('about')">
+    <div class="w-full bg-[#1B2632] sticky top-0 z-[1000]">
+        <nav class="flex items-center justify-center gap-2">
+            <UButton variant="ghost" color="neutral" class="nav-link text-sm md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tighter md:tracking-normal xl:tracking-wide" @click="scrollTo('about')">
                 | About Me |
             </UButton>
-            <UButton variant="ghost" color="neutral" class="nav-link text-lg md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tight md:tracking-normal xl:tracking-wide" @click="scrollTo('projects')">
+            <UButton variant="ghost" color="neutral" class="nav-link text-sm md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tighter md:tracking-normal xl:tracking-wide" @click="scrollTo('projects')">
                 | Projects |
             </UButton>
-            <UButton variant="ghost" color="neutral" class="nav-link text-lg md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tight md:tracking-normal xl:tracking-wide" @click="scrollTo('skills')">
+            <UButton variant="ghost" color="neutral" class="nav-link text-sm md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tighter md:tracking-normal xl:tracking-wide" @click="scrollTo('skills')">
                 | Skills |
             </UButton>
-            <UButton variant="ghost" color="neutral" class="nav-link text-lg md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tight md:tracking-normal xl:tracking-wide" @click="scrollTo('contact')">
+            <UButton variant="ghost" color="neutral" class="nav-link text-sm md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tighter md:tracking-normal xl:tracking-wide" @click="scrollTo('contact')">
                 | Contact Me |
             </UButton>
         </nav>
-    </UCard>
+    </div>
 </template>
 
 <style scoped>
-.navbar {
-    width: 100%;
-    background-color: var(--color-dark-blue);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-radius: 0 !important;
+.nav-link {
+    color: #FFB162 !important;
+    font-weight: bold;
+    background: transparent !important;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.nav-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+.nav-link:hover {
+    background-color: #2C3B4D !important;
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
-    .nav-inner {
-        gap: 0;
-    }
-
     .nav-link {
         padding-left: 0 !important;
         padding-right: 0 !important;
@@ -60,17 +63,5 @@ const scrollTo = (id: string) => {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
-}
-
-.nav-link {
-    color: var(--color-orange) !important;
-    font-weight: bold;
-    background: transparent !important;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.nav-link:hover {
-    background-color: var(--color-blue) !important;
-    transform: translateY(-2px);
 }
 </style>

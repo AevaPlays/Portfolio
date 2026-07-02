@@ -56,7 +56,7 @@ const projects = [
             :ui="{ item: 'basis-full md:basis-1/3 xl:basis-1/4' }"
             class="custom-carousel"
         >
-            <div class="carousel-card align-right">
+            <div class="bg-[#A35139] h-[40em] rounded-2xl flex flex-col p-4 text-right">
                 <UButton
                     variant="ghost"
                     :to="item.link"
@@ -67,37 +67,27 @@ const projects = [
                     {{ item.title }}
                 </UButton>
 
-                <div class="tags">
+                <div class="flex flex-wrap gap-2 my-2">
                     <UBadge
                         v-for="tool in item.tools"
                         :key="tool"
                         size="xl"
                         color="neutral"
                         variant="solid"
-                        class="tag"
+                        class="text-[#FFB162] bg-[#1B2632]"
                     >
                         {{ tool }}
                     </UBadge>
                 </div>
-                <p class="card-text text-2xl sm:text-xl md:text-xl lg:text-xl xl:text-2xl">{{ item.text }}</p>
+                <p class="text-[#FFB162] text-left text-2xl sm:text-xl md:text-xl lg:text-xl xl:text-2xl">{{ item.text }}</p>
             </div>
         </UCarousel>
     </section>
 </template>
 
 <style scoped>
-.carousel-card {
-    background-color: var(--color-dark-orange);
-    height: 40em;
-    border-radius: 16px;
-    display: flex;
-    padding: 1rem;
-    flex-direction: column;
-    
-}
-
 .project-title-btn {
-    color: var(--color-orange) !important;
+    color: #FFB162 !important;
     font-weight: bold;
     display: inline-flex;
     align-self: flex-end;
@@ -115,32 +105,15 @@ const projects = [
     height: 2.5rem;
 }
 
-.card-text {
-    color: var(--color-orange);
-    text-align: left;
-}
-
 .custom-carousel :deep(button[role="tab"]),
 .custom-carousel :deep([class*="-indicator"]) {
-    background-color: var(--color-dark-blue) !important;
+    background-color: #1B2632 !important;
     opacity: 0.6;
 }
 
 .custom-carousel :deep(button[role="tab"][aria-selected="true"]),
 .custom-carousel :deep([class*="-indicator"][class*="-active"]) {
-    background-color: var(--color-orange) !important;
+    background-color: #FFB162 !important;
     opacity: 1;
-}
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 0.5rem 0;
-}
-
-.tag {
-    color: #FFB162;
-    background-color: #1B2632;
 }
 </style>

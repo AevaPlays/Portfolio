@@ -2,7 +2,7 @@
     <section id="contact" class="page-section">
         <h1 class="title align-left">CONTACT ME</h1>
 
-        <div class="contact-links-container">
+        <div class="flex flex-wrap gap-6 p-4">
             <UButton
                 class="contact-link-btn sm:w-auto w-full"
                 to="https://www.linkedin.com/in/amiraerte/"
@@ -33,16 +33,9 @@
 </template>
 
 <style scoped>
-.contact-links-container {
-    display: flex;
-    gap: 1.5rem;
-    padding: 1rem;
-    flex-wrap: wrap;
-}
-
 .contact-link-btn {
-    background-color: var(--color-dark-orange) !important;
-    color: var(--color-orange) !important;
+    background-color: #A35139 !important;
+    color: #FFB162 !important;
     font-size: 1.2rem !important;
     font-weight: bold;
     padding: 0.75rem 1.5rem;
@@ -52,7 +45,7 @@
 
 .contact-link-btn:hover {
     transform: translateY(-2px);
-    background-color: var(--color-orange) !important;
-    color: var(--color-dark-orange) !important;
+    background-color: #FFB162 !important;
+    color: #A35139 !important;
 }
 </style>
