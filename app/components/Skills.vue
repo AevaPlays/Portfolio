@@ -30,10 +30,10 @@ const items = [
 </script>
 
 <template>
-    <section id="skills" class="page-section">
+    <section id="skills" class="page-section @container">
         <h1 class="title align-left">SKILLS</h1>
 
-        <div class="flex xl:flex-row flex-col gap-8 p-4">
+        <div class="flex @min-[100rem]:flex-row flex-col gap-8 p-4">
             <div class="flex flex-col gap-2">
                 <h2 class="text-[#FFB162] text-3xl font-bold">Technical Skills</h2>
                 <div class="flex flex-col flex-wrap gap-2 w-60">
@@ -41,7 +41,6 @@ const items = [
                         v-for="skill in technicalSkills"
                         :key="skill"
                         variant="solid"
-                        class="text-[#FFB162] bg-[#A35139] text-lg font-semibold px-3 py-1"
                     >
                         {{ skill }}
                     </UBadge>
@@ -53,54 +52,40 @@ const items = [
                         v-for="skill in frameworkSkills"
                         :key="skill"
                         variant="solid"
-                        class="text-[#FFB162] bg-[#A35139] text-lg font-semibold px-3 py-1"
                     >
                         {{ skill }}
                     </UBadge>
                 </div>
             </div>
 
-            <div class="flex flex-col flex-1">
-                <h1 class="text-[#FFB162] text-3xl font-bold xl:ml-[22rem]">Other Skills</h1>
-                <UTimeline
-                    size="3xl"
-                    :items="items"
-                    :default-value="2"
-                    :ui="{
-                        item: 'xl:even:flex-row-reverse xl:even:-translate-x-[calc(100%-3rem)] xl:even:text-right'
-                    }"
-                    class="custom-timeline xl:translate-x-[45rem]"
-                >
-                    <template #date="{ item }">
-                        <span class="timeline-date-text">{{ item.date }}</span>
-                    </template>
+            <div class="flex flex-col flex-1 @min-[100rem]:items-center">
+                <div class="flex flex-col @min-[100rem]:w-[57rem]">
+                    <h1 class="text-[#FFB162] text-3xl font-bold">Other Skills</h1>
+                    <div class="@min-[100rem]:ml-[27rem] @min-[100rem]:w-[30rem]">
+                        <UTimeline
+                            size="3xl"
+                            :items="items"
+                            :default-value="2"
+                            :ui="{
+                                item: '@min-[100rem]:even:flex-row-reverse @min-[100rem]:even:-translate-x-[calc(100%-3rem)] @min-[100rem]:even:text-right'
+                            }"
+                        >
+                            <template #date="{ item }">
+                                <span class="text-orange text-2xl font-bold">{{ item.date }}</span>
+                            </template>
 
-                    <template #description="{ item }">
-                        <div class="inline-block text-left max-w-[400px] bg-[#A35139] text-[#FFB162] p-3 rounded-lg shadow-sm font-medium mt-1">
-                            <h4 class="text-[#FFB162] text-xl font-bold mb-1">{{ item.displayTitle }}</h4>
-                            <p v-if="item.description" class="text-[#FFB162] text-base font-medium leading-relaxed">
-                                {{ item.description }}
-                            </p>
-                        </div>
-                    </template>
-                </UTimeline>
+                            <template #description="{ item }">
+                                <div class="inline-block text-left max-w-[400px] bg-[#A35139] text-[#FFB162] p-3 rounded-lg shadow-sm font-medium mt-1">
+                                    <h4 class="text-[#FFB162] text-xl font-bold mb-1">{{ item.displayTitle }}</h4>
+                                    <p v-if="item.description" class="text-[#FFB162] text-base font-medium leading-relaxed">
+                                        {{ item.description }}
+                                    </p>
+                                </div>
+                            </template>
+                        </UTimeline>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 </template>
-
-<style scoped>
-.timeline-date-text {
-    font-size: 1.5rem !important;
-    font-weight: bold !important;
-    color: #FFB162 !important;
-}
-
-.custom-timeline :deep(.u-timeline-item-date),
-.custom-timeline :deep([class*="-date"]),
-.custom-timeline :deep([class*="-label"]) {
-    font-size: 1rem !important;
-    font-weight: bold !important;
-    color: #FFB162 !important;
-}
-</style>

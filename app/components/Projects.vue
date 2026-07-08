@@ -54,14 +54,13 @@ const projects = [
             dots
             :items="projects"
             :ui="{ item: 'basis-full md:basis-1/3 xl:basis-1/4' }"
-            class="custom-carousel"
         >
             <div class="bg-[#A35139] h-[40em] rounded-2xl flex flex-col p-4 text-right">
                 <UButton
                     variant="ghost"
                     :to="item.link"
                     target="_blank"
-                    class="project-title-btn text-4xl md:text-4xl xl:text-4xl"
+                    class="inline-flex self-end text-4xl"
                     trailing-icon="i-lucide-external-link"
                 >
                     {{ item.title }}
@@ -74,7 +73,6 @@ const projects = [
                         size="xl"
                         color="neutral"
                         variant="solid"
-                        class="text-[#FFB162] bg-[#1B2632]"
                     >
                         {{ tool }}
                     </UBadge>
@@ -84,36 +82,3 @@ const projects = [
         </UCarousel>
     </section>
 </template>
-
-<style scoped>
-.project-title-btn {
-    color: #FFB162 !important;
-    font-weight: bold;
-    display: inline-flex;
-    align-self: flex-end;
-    background: transparent !important;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.project-title-btn:hover {
-    background-color: rgba(255, 177, 98, 0.15) !important;
-    transform: translateY(-2px);
-}
-
-.project-title-btn :deep(span) {
-    width: 2.5rem;
-    height: 2.5rem;
-}
-
-.custom-carousel :deep(button[role="tab"]),
-.custom-carousel :deep([class*="-indicator"]) {
-    background-color: #1B2632 !important;
-    opacity: 0.6;
-}
-
-.custom-carousel :deep(button[role="tab"][aria-selected="true"]),
-.custom-carousel :deep([class*="-indicator"][class*="-active"]) {
-    background-color: #FFB162 !important;
-    opacity: 1;
-}
-</style>
