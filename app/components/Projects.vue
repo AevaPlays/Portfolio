@@ -3,7 +3,7 @@ const projects = [
     {
         title: 'ThreadBound',
         link: 'https://github.com/AevaPlays/ThreadBound',
-        text: 'A Minecraft Fabric mod focused on cosy, decorative content with depth, currently in active development. ThreadBound adds new wool block variants, decorative plushie blocks with a custom 45° rotation placement system, and an in-game book laying the groundwork for a full bestiary system. Planned features include original lore, additional plushie variants, and companion plushie mobs with unique buffs and animations.',
+        text: 'A Minecraft Fabric mod focused on cosy, decorative content with depth, currently in active development. ThreadBound adds new wool block variants, decorative plushie blocks with a custom 45° rotation placement system, and an in-game book laying the groundwork for a full bestiary system. Planned features include original lore, additional plushie variants, and companion plushie mobs with unique buffs.',
         tools: ['Java', 'Fabric', 'Gradle', 'GitHub Actions']
     },
     {
