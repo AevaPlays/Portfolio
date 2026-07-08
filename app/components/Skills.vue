@@ -33,7 +33,7 @@ const items = [
     <section id="skills" class="page-section @container">
         <h1 class="title align-left">SKILLS</h1>
 
-        <div class="flex @min-[100rem]:flex-row flex-col gap-8 p-4">
+        <div class="flex @min-[75rem]:flex-row flex-col gap-8 p-4">
             <div class="flex flex-col gap-2">
                 <h2 class="text-[#FFB162] text-3xl font-bold">Technical Skills</h2>
                 <div class="flex flex-col flex-wrap gap-2 w-60">
@@ -58,16 +58,16 @@ const items = [
                 </div>
             </div>
 
-            <div class="flex flex-col flex-1 @min-[100rem]:items-center">
-                <div class="flex flex-col @min-[100rem]:w-[57rem]">
+            <div class="flex flex-col flex-1 @min-[75rem]:items-center">
+                <div class="flex flex-col @min-[75rem]:w-[57rem]">
                     <h1 class="text-[#FFB162] text-3xl font-bold">Other Skills</h1>
-                    <div class="@min-[100rem]:ml-[27rem] @min-[100rem]:w-[30rem]">
+                    <div class="@min-[75rem]:ml-[27rem] @min-[75rem]:w-[30rem]">
                         <UTimeline
                             size="3xl"
                             :items="items"
                             :default-value="2"
                             :ui="{
-                                item: '@min-[100rem]:even:flex-row-reverse @min-[100rem]:even:-translate-x-[calc(100%-3rem)] @min-[100rem]:even:text-right'
+                                item: '@min-[75rem]:even:flex-row-reverse @min-[75rem]:even:-translate-x-[calc(100%-3rem)] @min-[75rem]:even:text-right'
                             }"
                         >
                             <template #date="{ item }">
