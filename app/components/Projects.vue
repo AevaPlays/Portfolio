@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { t } = useI18n()
+import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
+
+const { t, locale } = useI18n()
 
 const projectKeys = ['threadbound', 'game', 'matchme', 'racetrack', 'moviesApi', 'prettifier', 'cypherTool'] as const
 
@@ -22,6 +24,55 @@ const projects = computed(() =>
         text: t(`projects.items.${key}.text`)
     }))
 )
+
+const threadboundTextRef = ref<HTMLElement | null>(null)
+
+const MIN_FIT_FONT_PX = 10
+const MAX_FIT_FONT_PX = 40
+
+function fitThreadboundText() {
+    const el = threadboundTextRef.value
+    if (!el) return
+
+    let min = MIN_FIT_FONT_PX
+    let max = MAX_FIT_FONT_PX
+    let best = min
+
+    while (min <= max) {
+        const mid = Math.floor((min + max) / 2)
+        el.style.fontSize = `${mid}px`
+        if (el.scrollHeight <= el.clientHeight) {
+            best = mid
+            min = mid + 1
+        } else {
+            max = mid - 1
+        }
+    }
+
+    el.style.fontSize = `${best}px`
+}
+
+let resizeTimeout: ReturnType<typeof setTimeout> | undefined
+
+function onResize() {
+    clearTimeout(resizeTimeout)
+    resizeTimeout = setTimeout(fitThreadboundText, 200)
+}
+
+onMounted(() => {
+    fitThreadboundText()
+    window.addEventListener('resize', onResize)
+})
+
+onBeforeUnmount(() => {
+    window.removeEventListener('resize', onResize)
+    clearTimeout(resizeTimeout)
+})
+
+watch(locale, async () => {
+    await nextTick()
+    fitThreadboundText()
+})
 </script>
 
 <template>
@@ -56,7 +107,20 @@ const projects = computed(() =>
                         {{ tool }}
                     </UBadge>
                 </div>
-                <p class="text-[#FFB162] text-left text-2xl sm:text-xl md:text-xl lg:text-xl xl:text-2xl">{{ item.text }}</p>
+
+                <p
+                    v-if="item.key === 'threadbound'"
+                    ref="threadboundTextRef"
+                    class="text-[#FFB162] text-left leading-snug flex-1 min-h-0 overflow-hidden"
+                >
+                    {{ item.text }}
+                </p>
+                <p
+                    v-else
+                    class="text-[#FFB162] text-left text-xl sm:text-lg md:text-base lg:text-base xl:text-lg leading-snug flex-1 min-h-0 overflow-hidden"
+                >
+                    {{ item.text }}
+                </p>
             </div>
         </UCarousel>
     </section>

@@ -3,7 +3,7 @@
     "about": "Обо мне",
     "projects": "Проекты",
     "skills": "Навыки",
-    "contact": "Связаться со мной"
+    "contact": "Контакты"
   },
   "header": {
     "name": "Amira Erte",
@@ -72,7 +72,7 @@
     }
   },
   "contact": {
-    "title": "СВЯЗАТЬСЯ СО МНОЙ",
+    "title": "КОНТАКТЫ",
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "email": "Эл. почта: {email}"
