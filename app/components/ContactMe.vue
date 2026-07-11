@@ -1,6 +1,6 @@
 <template>
     <section id="contact" class="page-section">
-        <h1 class="title align-left">CONTACT ME</h1>
+        <h1 class="title align-left">{{ $t('contact.title') }}</h1>
 
         <div class="flex flex-wrap gap-6 p-4">
             <UButton
@@ -9,7 +9,7 @@
                 target="_blank"
                 icon="i-lucide-linkedin"
             >
-                LinkedIn
+                {{ $t('contact.linkedin') }}
             </UButton>
 
             <UButton
@@ -18,7 +18,7 @@
                 target="_blank"
                 icon="i-lucide-github"
             >
-                GitHub
+                {{ $t('contact.github') }}
             </UButton>
 
             <UButton
@@ -26,7 +26,7 @@
                 to="mailto:amiraerte.w@gmail.com"
                 icon="i-lucide-mail"
             >
-                Email: amiraerte.w@gmail.com
+                {{ $t('contact.email', { email: 'amiraerte.w@gmail.com' }) }}
             </UButton>
         </div>
     </section>

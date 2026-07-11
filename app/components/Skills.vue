@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { t } = useI18n()
+
 const technicalSkills = ['C++', 'Go', 'Java', 'JavaScript', 'Python', 'TypeScript']
 
 const frameworkSkills = [
@@ -7,35 +9,31 @@ const frameworkSkills = [
     'React', 'REST APIs', 'Socket.IO', 'SQLite', 'Spring Boot', 'WebSockets'
 ]
 
-const items = [
-    {
-        date: 'Sept , 2024 - April, 2026',
-        displayTitle: 'kood/Jõhvi - Student',
-        description: 'Engaged in autonomous full-stack development, delivering projects independently and within cross-functional teams under a self-directed learning model that mirrored production engineering environments. Conducted rigorous peer code reviews and manual debugging sessions to validate system functionality before deployment. Actively contributed to the Student Council by managing operational budgets, maintaining financial documentation, organizing school-wide events, and auditing cloud data architecture to ensure file integrity.',
-        icon: 'i-lucide-book'
-    },
-    {
-        date: 'June 1, 2026 - June 19, 2026',
-        displayTitle: 'kood/Jõhvi - Tech Tutor',
-        description: 'Supported participants by troubleshooting code issues, debugging errors, and guiding them toward correct solutions or relevant support staff when needed. Led daily standups for participants and coordinated additional standups with administrators and staff. Also contributed to organizing small engagement activities to enhance participant experience.',
-        icon: 'i-lucide-briefcase'
-    },
-    {
-        date: 'N/A',
-        displayTitle: 'Coming Soon!',
-        description: '',
-        icon: 'i-lucide-briefcase'
-    }
-]
+const timelineKeys = ['student', 'techTutor', 'comingSoon'] as const
+
+const timelineIcons: Record<(typeof timelineKeys)[number], string> = {
+    student: 'i-lucide-book',
+    techTutor: 'i-lucide-briefcase',
+    comingSoon: 'i-lucide-briefcase'
+}
+
+const items = computed(() =>
+    timelineKeys.map(key => ({
+        icon: timelineIcons[key],
+        date: t(`skills.timeline.${key}.date`),
+        displayTitle: t(`skills.timeline.${key}.title`),
+        description: t(`skills.timeline.${key}.description`)
+    }))
+)
 </script>
 
 <template>
     <section id="skills" class="page-section @container">
-        <h1 class="title align-left">SKILLS</h1>
+        <h1 class="title align-left">{{ $t('skills.title') }}</h1>
 
         <div class="flex @min-[75rem]:flex-row flex-col gap-8 p-4">
             <div class="flex flex-col gap-2">
-                <h2 class="text-[#FFB162] text-3xl font-bold">Technical Skills</h2>
+                <h2 class="text-[#FFB162] text-3xl font-bold">{{ $t('skills.technicalSkills') }}</h2>
                 <div class="flex flex-col flex-wrap gap-2 w-60">
                     <UBadge
                         v-for="skill in technicalSkills"
@@ -46,7 +44,7 @@ const items = [
                     </UBadge>
                 </div>
 
-                <h2 class="text-[#FFB162] text-3xl font-bold mt-12">Frameworks & Tools</h2>
+                <h2 class="text-[#FFB162] text-3xl font-bold mt-12">{{ $t('skills.frameworksTools') }}</h2>
                 <div class="flex flex-col flex-wrap gap-2 w-60">
                     <UBadge
                         v-for="skill in frameworkSkills"
@@ -60,7 +58,7 @@ const items = [
 
             <div class="flex flex-col flex-1 @min-[75rem]:items-center">
                 <div class="flex flex-col @min-[75rem]:w-[57rem]">
-                    <h1 class="text-[#FFB162] text-3xl font-bold">Other Skills</h1>
+                    <h1 class="text-[#FFB162] text-3xl font-bold">{{ $t('skills.otherSkills') }}</h1>
                     <div class="@min-[75rem]:ml-[27rem] @min-[75rem]:w-[30rem]">
                         <UTimeline
                             size="3xl"

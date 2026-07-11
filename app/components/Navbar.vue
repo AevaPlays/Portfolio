@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { computed, onMounted } from 'vue'
+
+const { locale, locales, setLocale } = useI18n()
 
 const scrollTo = (id: string) => {
     const el = document.getElementById(id)
@@ -10,6 +12,13 @@ const scrollTo = (id: string) => {
         })
     }
 }
+
+const localeItems = computed(() =>
+    locales.value.map(loc => ({
+        label: loc.code.toUpperCase(),
+        onSelect: () => setLocale(loc.code)
+    }))
+)
 
 onMounted(() => {
     const navLinks = document.querySelectorAll('.nav-link')
@@ -23,19 +32,25 @@ onMounted(() => {
 
 <template>
     <div class="w-full bg-[#1B2632] sticky top-0 z-[1000]">
-        <nav class="flex items-center justify-center gap-2 py-3">
-            <UButton variant="ghost" color="neutral" class="nav-link text-sm md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tighter md:tracking-normal xl:tracking-wide" @click="scrollTo('about')">
-                | About Me |
+        <nav class="flex items-center justify-center gap-2 py-3 flex-wrap">
+            <UButton variant="ghost" color="neutral" class="nav-link" @click="scrollTo('about')">
+                | {{ $t('nav.about') }} |
             </UButton>
-            <UButton variant="ghost" color="neutral" class="nav-link text-sm md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tighter md:tracking-normal xl:tracking-wide" @click="scrollTo('projects')">
-                | Projects |
+            <UButton variant="ghost" color="neutral" class="nav-link" @click="scrollTo('projects')">
+                | {{ $t('nav.projects') }} |
             </UButton>
-            <UButton variant="ghost" color="neutral" class="nav-link text-sm md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tighter md:tracking-normal xl:tracking-wide" @click="scrollTo('skills')">
-                | Skills |
+            <UButton variant="ghost" color="neutral" class="nav-link" @click="scrollTo('skills')">
+                | {{ $t('nav.skills') }} |
             </UButton>
-            <UButton variant="ghost" color="neutral" class="nav-link text-sm md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tighter md:tracking-normal xl:tracking-wide" @click="scrollTo('contact')">
-                | Contact Me |
+            <UButton variant="ghost" color="neutral" class="nav-link" @click="scrollTo('contact')">
+                | {{ $t('nav.contact') }} |
             </UButton>
+
+            <UDropdownMenu :items="localeItems" :modal="false">
+                <UButton variant="ghost" color="neutral" class="nav-link">
+                    | {{ locale.toUpperCase() }} |
+                </UButton>
+            </UDropdownMenu>
         </nav>
     </div>
 </template>

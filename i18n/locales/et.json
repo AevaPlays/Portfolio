@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "about": "Minust",
+    "projects": "Projektid",
+    "skills": "Oskused",
+    "contact": "Võta ühendust"
+  },
+  "header": {
+    "name": "Amira Erte",
+    "role": "Nooremtarkvarainsener | Go, Java, JavaScript, TypeScript, Python, C++",
+    "intro": "Olen motiveeritud inimene, kellel on kogemusi nii backend- kui ka frontend-arenduses ning kes on töötanud keskmise suurusega projektidega meeskonnas."
+  },
+  "about": {
+    "title": "MINUST",
+    "paragraph1": "Läbisin poolteist aastat kestnud intensiivõppe, mis keskendus informaatika reaalsetele tööstusrakendustele, saades praktilisi kogemusi full-stack arenduses. Mulle meeldib õppida uusi tehnoloogiaid, jään pinge all rahulikuks, hindan konstruktiivset tagasisidet ja töötan hästi koostöökeskkondades.",
+    "paragraph2": "Väljaspool programmeerimist naudin heegeldamist, videomängude mängimist (sh The Elder Scrolls ja The Legend of Zelda sarjad) ning aja veetmist oma kassiga."
+  },
+  "projects": {
+    "title": "PROJEKTID",
+    "items": {
+      "threadbound": {
+        "title": "ThreadBound",
+        "text": "Minecrafti Fabric mood, mis keskendub hubasele ja sisukale dekoratiivsele sisule ning on hetkel aktiivses arenduses. ThreadBound lisab uusi villaplokkide variante, dekoratiivseid pehmete mänguasjade plokke koos kohandatud 45° pööramisega paigutussüsteemiga ning mängusisese raamatu, mis paneb aluse täieulatuslikule bestiaariumisüsteemile. Planeeritud funktsioonid hõlmavad originaalset lugu, täiendavaid pehmete mänguasjade variante ja kaaslasi kordumatute boonustega."
+      },
+      "game": {
+        "title": "Game",
+        "text": "Reaalajas brauserimäng 2–4 mängijale, mis keskendub ressursside kogumisele. Mängijad liituvad tubadega, koguvad erineva väärtusega esemeid ning võistlevad kõrgeima punktisumma nimel 2-minutilise ajapiirangu jooksul või kuni esimese 100 punktini jõudmiseni. Mäng kasutab DOM-põhist renderdust (ilma canvas'ita) koos serveripoolse autoriteetse olekuga WebSocketite kaudu sünkroonitud mängu jaoks."
+      },
+      "matchme": {
+        "title": "MatchMe",
+        "text": "Full-stack tutvumisrakendus, mille backend põhineb Spring Bootil, frontend Reactil ja andmebaasina kasutatakse PostgreSQL-i. Kasutajaid sobitatakse profiilide ühilduvuse alusel, toetades mitmeid andmegenereerimise profiile alates ühest kasutajast kuni 100 genereeritud kontoga andmekogumini. Rakendus on täielikult konteineritud Dockeriga, et tagada lihtne kohalik seadistamine ja ühtne keskkond."
+      },
+      "racetrack": {
+        "title": "Racetrack",
+        "text": "Reaalajas võidusõidu haldussüsteem, mis on ehitatud vähendamaks personali sõltuvust kohalikul rajal. See sisaldab rollipõhiseid armatuurlaudu administraatoritele, ohutusametnikele ja ringiaja jälgijatele, koos reaalajas võistluse juhtimise, ringiaegade jälgimise ja avaliku edetabeliga, mis kõik on sünkroonitud Socket.IO kaudu. Võistluse olek ja ringiajad säilivad serveri taaskäivituste vahel tänu SQLite'ile ja JSON-failide salvestusele."
+      },
+      "moviesApi": {
+        "title": "Movies API",
+        "text": "REST API filmiandmebaasi haldamiseks, ehitatud Spring Booti ja JPA abil, mille eesmärk on aidata filmiklubidel oma kogusid digiteerida ja hallata. See toetab täielikke CRUD-toiminguid filmide, näitlejate ja žanride jaoks koos mitmene-mitmega seostega, lehekülgedeks jaotatud tulemustega ja tõstutundetu otsinguga. Toetatud on ka sundkustutamine üksustele, millel on olemasolevad seosed teiste kirjetega."
+      },
+      "prettifier": {
+        "title": "Prettifier",
+        "text": "Käsurea tööriist, mis teisendab administraatorile mõeldud toored lennumarsruudid kliendisõbralikuks loetavaks väljundiks. See otsib IATA ja ICAO lennujaamakoode CSV kaudu, vormindab ISO 8601 kuupäevad ja kellaajad inimloetavale kujule ning eemaldab failist ebaühtlased tühikud. Loodud väljamõeldud reisibüroole kui kontoritöö aega säästev tööriist."
+      },
+      "cypherTool": {
+        "title": "Cypher Tool",
+        "text": "Käsurea krüpteerimis- ja dekrüpteerimistööriist, mis toetab ROT13, ümberpööramise ja Caesari šifri tehnikaid. Kasutajaid juhitakse interaktiivse menüü kaudu, et valida toiming, šiffer ja sisestada sõnum töötlemiseks. Mittetähestikulised märgid säilitatakse muutmata kujul kõigi šifreerimistoimingute vältel."
+      }
+    }
+  },
+  "skills": {
+    "title": "OSKUSED",
+    "technicalSkills": "Tehnilised oskused",
+    "frameworksTools": "Raamistikud ja tööriistad",
+    "otherSkills": "Muud oskused",
+    "timeline": {
+      "student": {
+        "date": "September 2024 – aprill 2026",
+        "title": "kood/Jõhvi – Õpilane",
+        "description": "Tegelesin iseseisva full-stack arendusega, viies projekte läbi nii üksi kui ka valdkonnaüleste meeskondadena iseõppimise mudeli raames, mis peegeldas tootmiskeskkonna insenerikeskkondi. Viisin läbi põhjalikke kolleegide koodiülevaatusi ja käsitsi silumist, et kinnitada süsteemi toimivust enne juurutamist. Osalesin aktiivselt õpilasesinduses, hallates tegevuseelarveid, pidades finantsdokumentatsiooni, korraldades koolisiseseid üritusi ning kontrollides pilve andmearhitektuuri failide terviklikkuse tagamiseks."
+      },
+      "techTutor": {
+        "date": "1. juuni 2026 – 19. juuni 2026",
+        "title": "kood/Jõhvi – Tehniline juhendaja",
+        "description": "Toetasin osalejaid koodiprobleemide lahendamisel, vigade silumisel ning suunasin neid õigete lahenduste või vastava tugipersonali juurde, kui vaja. Juhtisin osalejate igapäevaseid seisukoosolekuid (standup) ja koordineerisin lisakohtumisi administraatorite ja personaliga. Samuti aitasin korraldada väiksemaid tegevusi osalejate kogemuse parandamiseks."
+      },
+      "comingSoon": {
+        "date": "N/A",
+        "title": "Tulekul!",
+        "description": ""
+      }
+    }
+  },
+  "contact": {
+    "title": "VÕTA ÜHENDUST",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "email": "E-post: {email}"
+  }
+}

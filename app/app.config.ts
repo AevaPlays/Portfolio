@@ -12,7 +12,7 @@ export default defineAppConfig({
         {
           color: 'neutral',
           variant: 'ghost',
-          class: 'text-orange font-bold bg-transparent hover:bg-blue active:bg-blue max-md:px-0'
+          class: 'text-orange font-bold bg-transparent hover:bg-blue active:bg-blue max-md:px-0 text-sm md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tighter md:tracking-normal xl:tracking-wide'
         },
         {
           color: 'primary',
@@ -53,6 +53,12 @@ export default defineAppConfig({
             dot: 'data-[state=active]:bg-orange data-[state=active]:opacity-100'
           }
         }
+      }
+    },
+    dropdownMenu: {
+      slots: {
+        content: 'bg-dark-blue ring-0',
+        itemLabel: 'text-orange'
       }
     }
   }

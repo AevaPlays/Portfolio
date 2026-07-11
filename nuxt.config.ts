@@ -2,7 +2,8 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    '@nuxtjs/i18n'
   ],
 
   devtools: {
@@ -16,6 +17,16 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-01-15',
+
+  i18n: {
+    locales: [
+      { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
+      { code: 'ru', language: 'ru-RU', name: 'Русский', file: 'ru.json' },
+      { code: 'et', language: 'et-EE', name: 'Eesti', file: 'et.json' }
+    ],
+    defaultLocale: 'en',
+    langDir: 'locales'
+  },
 
   eslint: {
     config: {

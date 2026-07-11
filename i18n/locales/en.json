@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "about": "About Me",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact Me"
+  },
+  "header": {
+    "name": "Amira Erte",
+    "role": "Junior Software Engineer | Go, Java, JavaScript, TypeScript, Python, C++",
+    "intro": "I am a motivated person with experience in both backend and frontend development, having worked on medium-sized projects in a team environment."
+  },
+  "about": {
+    "title": "ABOUT ME",
+    "paragraph1": "I completed a one-and-a-half-year intensive education focused on real-world industry applications of computer science, gaining hands-on experience in full-stack development. I enjoy learning new technologies, stay calm under pressure, value constructive feedback, and work well in collaborative environments.",
+    "paragraph2": "Outside of coding, I enjoy crocheting, playing video games including The Elder Scrolls and The Legend of Zelda series, and spending time with my cat."
+  },
+  "projects": {
+    "title": "PROJECTS",
+    "items": {
+      "threadbound": {
+        "title": "ThreadBound",
+        "text": "A Minecraft Fabric mod focused on cosy, decorative content with depth, currently in active development. ThreadBound adds new wool block variants, decorative plushie blocks with a custom 45° rotation placement system, and an in-game book laying the groundwork for a full bestiary system. Planned features include original lore, additional plushie variants, and companion plushie mobs with unique buffs."
+      },
+      "game": {
+        "title": "Game",
+        "text": "A real-time 2–4 player multiplayer browser game focused on resource collection. Players join rooms, collect items with different values, and compete for the highest score within a 2-minute limit or first to 100 points. The game uses a DOM-based renderer (no canvas) with server-authoritative state over WebSockets for synchronized gameplay."
+      },
+      "matchme": {
+        "title": "MatchMe",
+        "text": "A full-stack matchmaking application with a Spring Boot backend, React frontend, and PostgreSQL database. Users are matched based on profile compatibility, with support for multiple data generation profiles ranging from single users to a dataset of 100 generated accounts. The app is fully containerized with Docker for easy local setup and consistent environments."
+      },
+      "racetrack": {
+        "title": "Racetrack",
+        "text": "A real-time race management system built to minimize staff dependency at a local racetrack. It features role-based dashboards for receptionists, safety officials, and lap observers, with live race control, lap time tracking, and a public leaderboard all synchronized via Socket.IO. Race state and lap times persist across server restarts using SQLite and JSON file storage."
+      },
+      "moviesApi": {
+        "title": "Movies API",
+        "text": "A REST API for managing a movie database built with Spring Boot and JPA, designed to help film societies digitize and maintain their collections. It supports full CRUD operations for Movies, Actors, and Genres with many-to-many relationships, paginated results, and case-insensitive search. Force deletion is supported for entities that have existing relationships to other records."
+      },
+      "prettifier": {
+        "title": "Prettifier",
+        "text": "A command-line tool that converts raw administrator-facing flight itineraries into customer-friendly readable output. It handles IATA and ICAO airport code lookups via CSV, formats ISO 8601 dates and times into human-readable form, and cleans up whitespace irregularities throughout the file. Built for a fictional travel agency as a back-office time-saving utility."
+      },
+      "cypherTool": {
+        "title": "Cypher Tool",
+        "text": "A command-line encryption and decryption utility supporting ROT13, Reverse, and Caesar cipher techniques. Users are guided through an interactive menu to select an operation, choose a cipher, and input their message for processing. Non-alphabet characters are preserved as-is throughout all cipher operations."
+      }
+    }
+  },
+  "skills": {
+    "title": "SKILLS",
+    "technicalSkills": "Technical Skills",
+    "frameworksTools": "Frameworks & Tools",
+    "otherSkills": "Other Skills",
+    "timeline": {
+      "student": {
+        "date": "Sept , 2024 - April, 2026",
+        "title": "kood/Jõhvi - Student",
+        "description": "Engaged in autonomous full-stack development, delivering projects independently and within cross-functional teams under a self-directed learning model that mirrored production engineering environments. Conducted rigorous peer code reviews and manual debugging sessions to validate system functionality before deployment. Actively contributed to the Student Council by managing operational budgets, maintaining financial documentation, organizing school-wide events, and auditing cloud data architecture to ensure file integrity."
+      },
+      "techTutor": {
+        "date": "June 1, 2026 - June 19, 2026",
+        "title": "kood/Jõhvi - Tech Tutor",
+        "description": "Supported participants by troubleshooting code issues, debugging errors, and guiding them toward correct solutions or relevant support staff when needed. Led daily standups for participants and coordinated additional standups with administrators and staff. Also contributed to organizing small engagement activities to enhance participant experience."
+      },
+      "comingSoon": {
+        "date": "N/A",
+        "title": "Coming Soon!",
+        "description": ""
+      }
+    }
+  },
+  "contact": {
+    "title": "CONTACT ME",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "email": "Email: {email}"
+  }
+}
