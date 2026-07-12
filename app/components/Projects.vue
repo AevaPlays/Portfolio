@@ -85,7 +85,7 @@ watch(locale, async () => {
             :items="projects"
             :ui="{ item: 'basis-full md:basis-1/3 xl:basis-1/4' }"
         >
-            <div class="bg-[#A35139] h-[40em] rounded-2xl flex flex-col p-4 text-right">
+            <div class="bg-[var(--color-accent-bg)] h-[40em] rounded-2xl flex flex-col p-4 text-right">
                 <UButton
                     variant="ghost"
                     :to="item.link"
@@ -111,13 +111,13 @@ watch(locale, async () => {
                 <p
                     v-if="item.key === 'threadbound'"
                     ref="threadboundTextRef"
-                    class="text-[#FFB162] text-left leading-snug flex-1 min-h-0 overflow-hidden"
+                    class="text-[var(--color-accent-text)] text-left leading-snug flex-1 min-h-0 overflow-hidden"
                 >
                     {{ item.text }}
                 </p>
                 <p
                     v-else
-                    class="text-[#FFB162] text-left text-xl sm:text-lg md:text-base lg:text-base xl:text-lg leading-snug flex-1 min-h-0 overflow-hidden"
+                    class="text-[var(--color-accent-text)] text-left text-xl sm:text-lg md:text-base lg:text-base xl:text-lg leading-snug flex-1 min-h-0 overflow-hidden"
                 >
                     {{ item.text }}
                 </p>

@@ -33,7 +33,7 @@ const items = computed(() =>
 
         <div class="flex @min-[75rem]:flex-row flex-col gap-8 p-4">
             <div class="flex flex-col gap-2">
-                <h2 class="text-[#FFB162] text-3xl font-bold">{{ $t('skills.technicalSkills') }}</h2>
+                <h2 class="text-[var(--color-heading)] text-3xl font-bold">{{ $t('skills.technicalSkills') }}</h2>
                 <div class="flex flex-col flex-wrap gap-2 w-60">
                     <UBadge
                         v-for="skill in technicalSkills"
@@ -44,7 +44,7 @@ const items = computed(() =>
                     </UBadge>
                 </div>
 
-                <h2 class="text-[#FFB162] text-3xl font-bold mt-12">{{ $t('skills.frameworksTools') }}</h2>
+                <h2 class="text-[var(--color-heading)] text-3xl font-bold mt-12">{{ $t('skills.frameworksTools') }}</h2>
                 <div class="flex flex-col flex-wrap gap-2 w-60">
                     <UBadge
                         v-for="skill in frameworkSkills"
@@ -58,7 +58,7 @@ const items = computed(() =>
 
             <div class="flex flex-col flex-1 @min-[75rem]:items-center">
                 <div class="flex flex-col @min-[75rem]:w-[57rem]">
-                    <h1 class="text-[#FFB162] text-3xl font-bold">{{ $t('skills.otherSkills') }}</h1>
+                    <h1 class="text-[var(--color-heading)] text-3xl font-bold">{{ $t('skills.otherSkills') }}</h1>
                     <div class="@min-[75rem]:ml-[27rem] @min-[75rem]:w-[30rem]">
                         <UTimeline
                             size="3xl"
@@ -69,13 +69,13 @@ const items = computed(() =>
                             }"
                         >
                             <template #date="{ item }">
-                                <span class="text-orange text-2xl font-bold">{{ item.date }}</span>
+                                <span class="text-[var(--color-heading)] text-2xl font-bold">{{ item.date }}</span>
                             </template>
 
                             <template #description="{ item }">
-                                <div class="inline-block text-left max-w-[400px] bg-[#A35139] text-[#FFB162] p-3 rounded-lg shadow-sm font-medium mt-1">
-                                    <h4 class="text-[#FFB162] text-xl font-bold mb-1">{{ item.displayTitle }}</h4>
-                                    <p v-if="item.description" class="text-[#FFB162] text-base font-medium leading-relaxed">
+                                <div class="inline-block text-left max-w-[400px] bg-[var(--color-accent-bg)] text-[var(--color-accent-text)] p-3 rounded-lg shadow-sm font-medium mt-1">
+                                    <h4 class="text-[var(--color-accent-text)] text-xl font-bold mb-1">{{ item.displayTitle }}</h4>
+                                    <p v-if="item.description" class="text-[var(--color-accent-text)] text-base font-medium leading-relaxed">
                                         {{ item.description }}
                                     </p>
                                 </div>

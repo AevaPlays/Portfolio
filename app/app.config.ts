@@ -12,20 +12,20 @@ export default defineAppConfig({
         {
           color: 'neutral',
           variant: 'ghost',
-          class: 'text-orange font-bold bg-transparent hover:bg-blue active:bg-blue max-md:px-0 text-sm md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tighter md:tracking-normal xl:tracking-wide'
+          class: 'text-[var(--color-heading)] font-bold bg-transparent hover:bg-[var(--color-surface)] active:bg-[var(--color-surface)] max-md:px-0 text-sm md:text-2xl lg:text-2xl xl:text-2xl whitespace-nowrap tracking-tighter md:tracking-normal xl:tracking-wide'
         },
         {
           color: 'primary',
           variant: 'ghost',
           class: {
-            base: 'text-orange font-bold bg-transparent hover:bg-orange/15',
+            base: 'text-[var(--color-accent-text)] font-bold bg-transparent hover:bg-[var(--color-accent-text)]/15',
             trailingIcon: 'size-10'
           }
         },
         {
           color: 'primary',
           variant: 'solid',
-          class: 'bg-dark-orange text-orange text-[1.2rem] font-bold rounded-lg px-6 py-3 hover:bg-orange hover:text-dark-orange'
+          class: 'bg-[var(--color-accent-bg)] text-[var(--color-accent-text)] text-[1.2rem] font-bold rounded-lg px-6 py-3 hover:bg-[var(--color-accent-text)] hover:text-[var(--color-accent-bg)]'
         }
       ]
     },
@@ -34,31 +34,41 @@ export default defineAppConfig({
         {
           color: 'neutral',
           variant: 'solid',
-          class: 'text-orange bg-dark-blue'
+          class: 'text-[var(--color-heading)] bg-[var(--color-surface-elevated)]'
         },
         {
           color: 'primary',
           variant: 'solid',
-          class: 'text-orange bg-dark-orange text-lg font-semibold px-3 py-1'
+          class: 'text-[var(--color-accent-text)] bg-[var(--color-accent-bg)] text-lg font-semibold px-3 py-1'
         }
       ]
     },
     carousel: {
       slots: {
-        dot: 'bg-dark-blue opacity-60'
+        dot: 'bg-[var(--color-surface-elevated)] opacity-60'
       },
       variants: {
         active: {
           true: {
-            dot: 'data-[state=active]:bg-orange data-[state=active]:opacity-100'
+            dot: 'data-[state=active]:bg-[var(--color-heading)] data-[state=active]:opacity-100'
           }
         }
       }
     },
     dropdownMenu: {
       slots: {
-        content: 'bg-dark-blue ring-0',
-        itemLabel: 'text-orange'
+        content: 'bg-[var(--color-surface-elevated)] ring-0',
+        itemLabel: 'text-[var(--color-heading)]',
+        separator: 'bg-[var(--color-surface)]'
+      }
+    },
+    separator: {
+      variants: {
+        color: {
+          neutral: {
+            border: 'border-[var(--color-surface-elevated)]'
+          }
+        }
       }
     }
   }

@@ -3,11 +3,14 @@
     "about": "About Me",
     "projects": "Projects",
     "skills": "Skills",
-    "contact": "Contact Me"
+    "contact": "Contact Me",
+    "menu": "Menu",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode"
   },
   "header": {
     "name": "Amira Erte",
-    "role": "Junior Software Engineer | Go, Java, JavaScript, TypeScript, Python, C++",
+    "role": "Junior Software Engineer \\| Go, Java, JavaScript, TypeScript, Python, C++",
     "intro": "I am a motivated person with experience in both backend and frontend development, having worked on medium-sized projects in a team environment."
   },
   "about": {

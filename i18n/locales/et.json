@@ -3,11 +3,14 @@
     "about": "Minust",
     "projects": "Projektid",
     "skills": "Oskused",
-    "contact": "Võta ühendust"
+    "contact": "Võta ühendust",
+    "menu": "Menüü",
+    "lightMode": "Hele teema",
+    "darkMode": "Tume teema"
   },
   "header": {
     "name": "Amira Erte",
-    "role": "Nooremtarkvarainsener | Go, Java, JavaScript, TypeScript, Python, C++",
+    "role": "Nooremtarkvarainsener \\| Go, Java, JavaScript, TypeScript, Python, C++",
     "intro": "Olen motiveeritud inimene, kellel on kogemusi nii backend- kui ka frontend-arenduses ning kes on töötanud keskmise suurusega projektidega meeskonnas."
   },
   "about": {

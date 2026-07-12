@@ -16,19 +16,35 @@
   --color-dark-blue: #1B2632;
   /*oklch(0.264_0.0274_251.05)*/
 
-  /*FOR FUTURE LIGHT THEME*/
   --color-off-white: #EEE9DF;
   /*oklch(0.9352_0.0144_84.58)*/
-  
+
   --color-beige: #C9C1B1;
   /*oklch(0.813_0.0237_84.59)*/
+}
+
+:root {
+  --color-surface: var(--color-off-white);
+  --color-surface-elevated: var(--color-beige);
+  --color-heading: var(--color-dark-orange);
+  --color-accent-bg: var(--color-orange);
+  --color-accent-text: var(--color-dark-orange);
+}
+
+.dark {
+  --color-surface: var(--color-blue);
+  --color-surface-elevated: var(--color-dark-blue);
+  --color-heading: var(--color-orange);
+  --color-accent-bg: var(--color-dark-orange);
+  --color-accent-text: var(--color-orange);
 }
 
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: clip;
-  background-color: #2C3B4D;
+  background-color: var(--color-surface);
+  transition: background-color 0.2s ease;
   font-family: var(--font-sans);
 }
 
@@ -48,11 +64,12 @@ section {
     padding: 1rem;
     font-size: 3rem;
     font-weight: bold;
-    color: var(--color-orange);
+    color: var(--color-heading);
 }
 
 .page-section {
     padding: 1rem;
     padding-bottom: 3rem;
-    background-color: var(--color-blue);
+    background-color: var(--color-surface);
+    transition: background-color 0.2s ease;
 }
