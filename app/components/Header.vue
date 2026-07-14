@@ -11,6 +11,15 @@
                     <p class="md:text-2xl text-lg text-[var(--color-accent-text)]">
                         {{ $t('header.intro') }}
                     </p>
+                    <UButton
+                        variant="neutral"
+                        to="/AmiraErte_cv.pdf"
+                        external
+                        download
+                        icon="i-lucide-download"
+                    >
+                        {{ $t('about.downloadCv') }}
+                    </UButton>
                 </div>
             </div>
         </div>

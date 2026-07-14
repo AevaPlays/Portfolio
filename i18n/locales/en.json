@@ -6,7 +6,8 @@
     "contact": "Contact Me",
     "menu": "Menu",
     "lightMode": "Light Mode",
-    "darkMode": "Dark Mode"
+    "darkMode": "Dark Mode",
+    "backToTop": "Back to Top"
   },
   "header": {
     "name": "Amira Erte",
@@ -16,7 +17,8 @@
   "about": {
     "title": "ABOUT ME",
     "paragraph1": "I completed a one-and-a-half-year intensive education focused on real-world industry applications of computer science, gaining hands-on experience in full-stack development. I enjoy learning new technologies, stay calm under pressure, value constructive feedback, and work well in collaborative environments.",
-    "paragraph2": "Outside of coding, I enjoy crocheting, playing video games including The Elder Scrolls and The Legend of Zelda series, and spending time with my cat."
+    "paragraph2": "Outside of coding, I enjoy crocheting, playing video games including The Elder Scrolls and The Legend of Zelda series, and spending time with my cat.",
+    "downloadCv": "Download CV"
   },
   "projects": {
     "title": "PROJECTS",

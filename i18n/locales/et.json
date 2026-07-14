@@ -6,7 +6,8 @@
     "contact": "Võta ühendust",
     "menu": "Menüü",
     "lightMode": "Hele teema",
-    "darkMode": "Tume teema"
+    "darkMode": "Tume teema",
+    "backToTop": "Üles tagasi"
   },
   "header": {
     "name": "Amira Erte",
@@ -16,7 +17,8 @@
   "about": {
     "title": "MINUST",
     "paragraph1": "Läbisin poolteist aastat kestnud intensiivõppe, mis keskendus informaatika reaalsetele tööstusrakendustele, saades praktilisi kogemusi full-stack arenduses. Mulle meeldib õppida uusi tehnoloogiaid, jään pinge all rahulikuks, hindan konstruktiivset tagasisidet ja töötan hästi koostöökeskkondades.",
-    "paragraph2": "Väljaspool programmeerimist naudin heegeldamist, videomängude mängimist (sh The Elder Scrolls ja The Legend of Zelda sarjad) ning aja veetmist oma kassiga."
+    "paragraph2": "Väljaspool programmeerimist naudin heegeldamist, videomängude mängimist (sh The Elder Scrolls ja The Legend of Zelda sarjad) ning aja veetmist oma kassiga.",
+    "downloadCv": "Laadi alla CV"
   },
   "projects": {
     "title": "PROJEKTID",

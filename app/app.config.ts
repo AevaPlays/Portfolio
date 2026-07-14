@@ -8,6 +8,12 @@ export default defineAppConfig({
       slots: {
         base: 'transition-[background-color,color,transform] duration-200 hover:-translate-y-0.5'
       },
+      variants: {
+        variant: {
+          neutral: '',
+          backToTop: ''
+        }
+      },
       compoundVariants: [
         {
           color: 'neutral',
@@ -26,6 +32,14 @@ export default defineAppConfig({
           color: 'primary',
           variant: 'solid',
           class: 'bg-[var(--color-accent-bg)] text-[var(--color-accent-text)] text-[1.2rem] font-bold rounded-lg px-6 py-3 hover:bg-[var(--color-accent-text)] hover:text-[var(--color-accent-bg)]'
+        },
+        {
+          variant: 'neutral',
+          class: 'w-[13rem] max-w-full whitespace-nowrap bg-[var(--color-accent-text)] text-[var(--color-accent-bg)] text-[1.1rem] font-bold rounded-lg px-6 py-3 hover:bg-[#d1814e]'
+        },
+        {
+          variant: 'backToTop',
+          class: 'fixed bottom-6 right-6 z-[1000] rounded-full p-3 shadow-lg bg-[var(--color-accent-bg)] text-[var(--color-accent-text)] hover:bg-[var(--color-accent-text)] hover:text-[var(--color-accent-bg)]'
         }
       ]
     },
