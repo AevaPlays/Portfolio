@@ -33,8 +33,6 @@ A sleek, fast, and fully responsive personal portfolio built using **Nuxt 4** an
 │   │   ├── Navbar.vue           # Sticky nav with theme + language dropdown
 │   │   ├── Projects.vue         # Repository carousel with auto-fit card text
 │   │   └── Skills.vue           # Skill badges alongside a timeline visualization
-│   ├── composables/
-│   │   └── usetheme.ts          # Theme-related composable
 │   ├── layouts/
 │   │   └── default.vue          # Base page layout
 │   ├── pages/
