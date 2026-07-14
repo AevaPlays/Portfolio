@@ -25,15 +25,18 @@ const projects = computed(() =>
     }))
 )
 
-const threadboundTextRef = ref<HTMLElement | null>(null)
+const textRefs = ref<Record<string, HTMLElement | null>>({})
+
+function setTextRef(key: string) {
+    return (el: unknown) => {
+        textRefs.value[key] = el as HTMLElement | null
+    }
+}
 
 const MIN_FIT_FONT_PX = 10
 const MAX_FIT_FONT_PX = 40
 
-function fitThreadboundText() {
-    const el = threadboundTextRef.value
-    if (!el) return
-
+function fitText(el: HTMLElement): number {
     let min = MIN_FIT_FONT_PX
     let max = MAX_FIT_FONT_PX
     let best = min
@@ -50,17 +53,28 @@ function fitThreadboundText() {
     }
 
     el.style.fontSize = `${best}px`
+    return best
+}
+
+function fitAllText() {
+    const threadboundEl = textRefs.value.threadbound
+    if (!threadboundEl) return
+
+    const size = fitText(threadboundEl)
+    Object.values(textRefs.value).forEach((el) => {
+        if (el) el.style.fontSize = `${size}px`
+    })
 }
 
 let resizeTimeout: ReturnType<typeof setTimeout> | undefined
 
 function onResize() {
     clearTimeout(resizeTimeout)
-    resizeTimeout = setTimeout(fitThreadboundText, 200)
+    resizeTimeout = setTimeout(fitAllText, 200)
 }
 
 onMounted(() => {
-    fitThreadboundText()
+    fitAllText()
     window.addEventListener('resize', onResize)
 })
 
@@ -71,7 +85,7 @@ onBeforeUnmount(() => {
 
 watch(locale, async () => {
     await nextTick()
-    fitThreadboundText()
+    fitAllText()
 })
 </script>
 
@@ -82,6 +96,7 @@ watch(locale, async () => {
             v-slot="{ item }"
             arrows
             dots
+            align="start"
             :items="projects"
             :ui="{ item: 'basis-full md:basis-1/3 xl:basis-1/4' }"
         >
@@ -109,15 +124,8 @@ watch(locale, async () => {
                 </div>
 
                 <p
-                    v-if="item.key === 'threadbound'"
-                    ref="threadboundTextRef"
+                    :ref="setTextRef(item.key)"
                     class="text-[var(--color-accent-text)] text-left leading-snug flex-1 min-h-0 overflow-hidden"
-                >
-                    {{ item.text }}
-                </p>
-                <p
-                    v-else
-                    class="text-[var(--color-accent-text)] text-left text-xl sm:text-lg md:text-base lg:text-base xl:text-lg leading-snug flex-1 min-h-0 overflow-hidden"
                 >
                     {{ item.text }}
                 </p>
