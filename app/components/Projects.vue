@@ -2,6 +2,7 @@
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
 const { t, locale } = useI18n()
+const shadows = useShadows()
 
 const projectKeys = ['threadbound', 'game', 'matchme', 'racetrack', 'moviesApi', 'prettifier', 'cypherTool'] as const
 
@@ -73,14 +74,28 @@ function onResize() {
     resizeTimeout = setTimeout(fitAllText, 200)
 }
 
+let cardResizeObserver: ResizeObserver | undefined
+
 onMounted(() => {
-    fitAllText()
+    // Wait a frame so the carousel's own layout pass (slide sizing) has settled
+    // before measuring, otherwise the fit locks in against a stale box height.
+    requestAnimationFrame(() => {
+        requestAnimationFrame(fitAllText)
+    })
+
     window.addEventListener('resize', onResize)
+
+    const cardEl = textRefs.value.threadbound?.parentElement
+    if (cardEl) {
+        cardResizeObserver = new ResizeObserver(onResize)
+        cardResizeObserver.observe(cardEl)
+    }
 })
 
 onBeforeUnmount(() => {
     window.removeEventListener('resize', onResize)
     clearTimeout(resizeTimeout)
+    cardResizeObserver?.disconnect()
 })
 
 watch(locale, async () => {
@@ -98,9 +113,12 @@ watch(locale, async () => {
             dots
             align="start"
             :items="projects"
-            :ui="{ item: 'basis-full md:basis-1/3 xl:basis-1/4' }"
+            :ui="{ item: 'basis-full md:basis-1/3 xl:basis-1/4 pb-12' }"
         >
-            <div class="bg-[var(--color-accent-bg)] h-[40em] rounded-2xl flex flex-col p-4 text-right">
+            <div
+                class="bg-[var(--color-accent-bg)] h-[40em] rounded-2xl flex flex-col p-4 text-right"
+                :style="{ boxShadow: shadows.card }"
+            >
                 <UButton
                     variant="ghost"
                     :to="item.link"
@@ -118,6 +136,7 @@ watch(locale, async () => {
                         size="xl"
                         color="neutral"
                         variant="solid"
+                        :style="{ boxShadow: shadows.badge }"
                     >
                         {{ tool }}
                     </UBadge>

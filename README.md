@@ -43,7 +43,7 @@ A sleek, fast, and fully responsive personal portfolio built using **Nuxt 4** an
 │   └── router.options.ts        # Custom scroll-behavior configuration
 ├── i18n/locales/                # en.json, ru.json, et.json translation files
 ├── public/                      # Static assets (favicon, CV, decorative images)
-└── nuxt.config.ts                # Nuxt modules, i18n, color mode, ESLint config
+└── nuxt.config.ts               # Nuxt modules, i18n, color mode, ESLint config
 ```
 
 ---

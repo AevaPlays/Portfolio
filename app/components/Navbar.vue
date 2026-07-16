@@ -3,6 +3,8 @@ import { computed, onMounted, ref, watch } from 'vue'
 
 const { t, locale, locales, setLocale } = useI18n()
 
+const shadows = useShadows()
+
 const colorMode = useColorMode()
 const isDark = computed({
     get: () => colorMode.value === 'dark',
@@ -83,7 +85,10 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="w-full bg-[var(--color-surface-elevated)] sticky top-0 z-[1000]">
+    <div
+        class="w-full bg-[var(--color-surface-elevated)] sticky top-0 z-[1000]"
+        :style="{ boxShadow: shadows.navbar }"
+    >
         <nav class="flex items-center justify-center gap-2 py-3 flex-wrap">
             <UButton variant="ghost" color="neutral" class="nav-link" @click="scrollTo('about')">
                 | {{ $t('nav.about') }} |

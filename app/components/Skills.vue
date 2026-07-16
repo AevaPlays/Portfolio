@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n()
+const shadows = useShadows()
 
 const technicalSkills = ['C++', 'Go', 'Java', 'JavaScript', 'Python', 'TypeScript']
 
@@ -39,6 +40,7 @@ const items = computed(() =>
                         v-for="skill in technicalSkills"
                         :key="skill"
                         variant="solid"
+                        :style="{ boxShadow: shadows.badge }"
                     >
                         {{ skill }}
                     </UBadge>
@@ -50,6 +52,7 @@ const items = computed(() =>
                         v-for="skill in frameworkSkills"
                         :key="skill"
                         variant="solid"
+                        :style="{ boxShadow: shadows.badge }"
                     >
                         {{ skill }}
                     </UBadge>
@@ -73,7 +76,10 @@ const items = computed(() =>
                             </template>
 
                             <template #description="{ item }">
-                                <div class="inline-block text-left max-w-[400px] bg-[var(--color-accent-bg)] text-[var(--color-accent-text)] p-3 rounded-lg shadow-sm font-medium mt-1">
+                                <div
+                                    class="inline-block text-left max-w-[400px] bg-[var(--color-accent-bg)] text-[var(--color-accent-text)] p-3 rounded-lg font-medium mt-1"
+                                    :style="{ boxShadow: shadows.card }"
+                                >
                                     <h4 class="text-[var(--color-accent-text)] text-xl font-bold mb-1">{{ item.displayTitle }}</h4>
                                     <p v-if="item.description" class="text-[var(--color-accent-text)] text-base font-medium leading-relaxed">
                                         {{ item.description }}

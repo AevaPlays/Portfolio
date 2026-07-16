@@ -1,4 +1,34 @@
 export default defineAppConfig({
+  shadows: {
+    headerDecor: {
+      dark: '48px 0 64px rgba(36, 11, 0, 0.6)',
+      light: '48px 0 64px rgba(36, 11, 0, 0.3)'
+    },
+    headerDecorMobile: {
+      dark: 'inset 0 100px 50px -64px rgba(0, 0, 0, 0.6)',
+      light: 'inset 0 100px 50px -64px rgba(0, 0, 0, 0.3)'
+    },
+    navbar: {
+      dark: '0 8px 27px rgba(0, 4, 21, 0.7)',
+      light: '0 8px 27px rgba(0, 4, 21, 0.35)'
+    },
+    image: {
+      dark: '0 8px 27px rgba(0, 4, 21, 0.6)',
+      light: '0 8px 27px rgba(0, 4, 21, 0.3)'
+    },
+    button: {
+      dark: '0 8px 20px rgba(0, 0, 0, 0.6)',
+      light: '0 8px 20px rgba(0, 0, 0, 0.3)'
+    },
+    badge: {
+      dark: '0 7px 12px rgba(0, 0, 0, 0.6)',
+      light: '0 7px 12px rgba(0, 0, 0, 0.3)'
+    },
+    card: {
+      dark: '0 12px 30px rgba(0, 0, 0, 0.6)',
+      light: '0 12px 30px rgba(0, 0, 0, 0.3)'
+    }
+  },
   ui: {
     colors: {
       primary: 'orange',
@@ -39,7 +69,7 @@ export default defineAppConfig({
         },
         {
           variant: 'backToTop',
-          class: 'fixed bottom-6 right-6 z-[1000] rounded-full p-3 shadow-lg bg-[var(--color-accent-bg)] text-[var(--color-accent-text)] hover:bg-[var(--color-accent-text)] hover:text-[var(--color-accent-bg)]'
+          class: 'fixed bottom-6 right-6 z-[1000] rounded-full p-3 bg-[var(--color-accent-bg)] text-[var(--color-accent-text)] hover:bg-[var(--color-accent-text)] hover:text-[var(--color-accent-bg)]'
         }
       ]
     },
@@ -59,7 +89,7 @@ export default defineAppConfig({
     },
     carousel: {
       slots: {
-        dot: 'bg-[var(--color-surface-elevated)] opacity-60'
+        dot: 'bg-[var(--color-surface-elevated)] opacity-60 size-4'
       },
       variants: {
         active: {
@@ -74,6 +104,13 @@ export default defineAppConfig({
         content: 'bg-[var(--color-surface-elevated)] ring-0',
         itemLabel: 'text-[var(--color-heading)]',
         separator: 'bg-[var(--color-surface)]'
+      },
+      variants: {
+        active: {
+          false: {
+            item: 'data-highlighted:before:bg-[var(--color-surface)] data-[state=open]:before:bg-[var(--color-surface)]'
+          }
+        }
       }
     },
     separator: {
