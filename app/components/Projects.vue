@@ -106,7 +106,7 @@ watch(locale, async () => {
 
 <template>
     <section id="projects" class="page-section">
-        <h1 class="title align-right">PROJECTS</h1>
+        <h1 class="title align-right">{{ $t('projects.title') }}</h1>
         <UCarousel
             v-slot="{ item }"
             arrows
