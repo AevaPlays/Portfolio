@@ -29,6 +29,48 @@ export default defineAppConfig({
       light: '0 12px 30px rgba(0, 0, 0, 0.3)'
     }
   },
+  plasma: {
+    headerDecor: {
+      dark: {
+        stops: [
+          { color: '#a35139', position: 0.69 },
+          { color: '#1b2632', position: 1 }
+        ]
+      },
+      light: {
+        stops: [
+          { color: '#eee9df', position: 0.69 },
+          { color: '#ffb162', position: 1 }
+        ]
+      },
+      density: 2.7,
+      speed: 2,
+      intensity: 1.5,
+      warp: 0.4,
+      contrast: 1,
+      balance: 50
+    },
+    projectCard: {
+      opacity: 20
+    }
+  },
+  cursorTrail: {
+    stops: [
+      { color: '#a35139', position: 0 },
+      { color: '#ffb162', position: 1 }
+    ],
+    radius: 0.3,
+    shrink: 0.7,
+    length: 0.2,
+    opacity: 50
+  },
+  marcelHearts: [
+    { left: '20%', top: '20%', size: 'text-3xl md:text-7xl', rotate: -25, delay: 0 },
+    { left: '10%', top: '10%', size: 'text-2xl md:text-5xl', rotate: 25, delay: 100 },
+    { left: '80%', top: '80%', size: 'text-3xl md:text-7xl', rotate: 25, delay: 200 },
+    { left: '70%', top: '70%', size: 'text-2xl md:text-5xl', rotate: -25, delay: 0 },
+    { left: '65%', top: '80%', size: 'text-lg md:text-2xl', rotate: -35, delay: 100 }
+  ],
   ui: {
     colors: {
       primary: 'orange',

@@ -3,6 +3,7 @@ import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
 const { t, locale } = useI18n()
 const shadows = useShadows()
+const appConfig = useAppConfig()
 
 const projectKeys = ['threadbound', 'game', 'matchme', 'racetrack', 'moviesApi', 'prettifier', 'cypherTool'] as const
 
@@ -116,38 +117,42 @@ watch(locale, async () => {
             :ui="{ item: 'basis-full md:basis-1/3 xl:basis-1/4 pb-12' }"
         >
             <div
-                class="bg-[var(--color-accent-bg)] h-[40em] rounded-2xl flex flex-col p-4 text-right"
+                class="relative overflow-hidden bg-[var(--color-accent-bg)] h-[40em] rounded-2xl flex flex-col p-4 text-right"
                 :style="{ boxShadow: shadows.card }"
             >
-                <UButton
-                    variant="ghost"
-                    :to="item.link"
-                    target="_blank"
-                    class="inline-flex self-end text-4xl"
-                    trailing-icon="i-lucide-external-link"
-                >
-                    {{ item.title }}
-                </UButton>
+                <PlasmaShader :style="{ opacity: appConfig.plasma.projectCard.opacity / 100 }" />
 
-                <div class="flex flex-wrap gap-2 my-2">
-                    <UBadge
-                        v-for="tool in item.tools"
-                        :key="tool"
-                        size="xl"
-                        color="neutral"
-                        variant="solid"
-                        :style="{ boxShadow: shadows.badge }"
+                <div class="relative flex flex-1 flex-col min-h-0">
+                    <UButton
+                        variant="ghost"
+                        :to="item.link"
+                        target="_blank"
+                        class="inline-flex self-end text-4xl"
+                        trailing-icon="i-lucide-external-link"
                     >
-                        {{ tool }}
-                    </UBadge>
-                </div>
+                        {{ item.title }}
+                    </UButton>
 
-                <p
-                    :ref="setTextRef(item.key)"
-                    class="text-[var(--color-accent-text)] text-left leading-snug flex-1 min-h-0 overflow-hidden"
-                >
-                    {{ item.text }}
-                </p>
+                    <div class="flex flex-wrap gap-2 my-2">
+                        <UBadge
+                            v-for="tool in item.tools"
+                            :key="tool"
+                            size="xl"
+                            color="neutral"
+                            variant="solid"
+                            :style="{ boxShadow: shadows.badge }"
+                        >
+                            {{ tool }}
+                        </UBadge>
+                    </div>
+
+                    <p
+                        :ref="setTextRef(item.key)"
+                        class="text-[var(--color-accent-text)] text-left leading-snug flex-1 min-h-0 overflow-hidden"
+                    >
+                        {{ item.text }}
+                    </p>
+                </div>
             </div>
         </UCarousel>
     </section>

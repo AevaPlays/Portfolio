@@ -4,9 +4,10 @@ const shadows = useShadows()
 
 <template>
     <div>
-        <div class="w-full bg-[url('/pixel_decor_light.jpg')] dark:bg-[url('/pixel_decor.jpg')] bg-cover bg-center flex flex-row md:min-h-[40em] min-h-0">
+        <div class="relative w-full overflow-hidden flex flex-row md:min-h-[40em] min-h-0">
+            <PlasmaShader class="hidden md:block" />
             <div
-                class="md:w-[40%] w-full bg-[var(--color-accent-bg)] p-8 shadow-none md:shadow-[var(--decor-shadow)]"
+                class="relative md:w-[40%] w-full bg-[var(--color-accent-bg)] p-8 shadow-none md:shadow-[var(--decor-shadow)]"
                 :style="{ '--decor-shadow': shadows.headerDecor }"
             >
                 <div class="flex flex-col gap-4">
@@ -37,8 +38,10 @@ const shadows = useShadows()
             </div>
         </div>
         <div
-            class="md:hidden w-full h-64 bg-[url('/pixel_decor_mobile_light.jpg')] dark:bg-[url('/pixel_decor_mobile.jpg')] bg-cover bg-center"
+            class="md:hidden relative w-full h-64 overflow-hidden"
             :style="{ boxShadow: shadows.headerDecorMobile }"
-        ></div>
+        >
+            <PlasmaShader />
+        </div>
     </div>
 </template>
