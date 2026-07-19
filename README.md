@@ -48,6 +48,17 @@ A sleek, fast, and fully responsive personal portfolio built using **Nuxt 4** an
 
 ---
 
+## Sources
+
+- [Nuxt Documentation](https://nuxt.com/docs) — framework reference
+- [Nuxt UI Documentation](https://ui.nuxt.com/docs) — component library reference
+- [Tailwind CSS Colors](https://tailwindcss.com/docs/colors) — color palette reference
+- [OKLCH Color Picker & Converter](https://oklch.com/) — color picking/conversion
+- [Lucide Icons](https://lucide.dev/icons/) — icon set used throughout the UI
+- [Shaders presets](https://shaders.com/presets) — reference used for shader effects
+
+---
+
 ## License
 
 Licensed under the [MIT License](LICENSE).
